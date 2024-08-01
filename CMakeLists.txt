@@ -8,11 +8,14 @@ project(OpenONI VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Copy files and folders
+file(COPY ${PROJECT_SOURCE_DIR}/sprites DESTINATION ${CMAKE_BINARY_DIR})
+
 # Add include directories
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Find all source and header files
-file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
+file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.hpp")
 
 # Add an executable target
 add_executable(OpenONI ${SOURCES})
